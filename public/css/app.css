@@ -1,5 +1,26 @@
 /* app css stylesheet */
 
+body{
+  background-color: black;
+}
+
+#all {
+  height: 400px;
+  width: 400px;
+  margin: 50px 30% 30%;
+  position: relative;
+  color: white;
+}
+
+img {
+  left: 0px;
+  top:0px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -10;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +48,22 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 0.85em;
+}
+
+nav ul{
+  height:300px; 
+  width:40%;
+  background: rgba(0,0,0,.4);
+  border-radius: 5%;
+  padding-top: 5%;
+}
+
+nav ul{
+  /*overflow:hidden; */
+  overflow-y:scroll;
 }

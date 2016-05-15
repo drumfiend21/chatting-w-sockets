@@ -1,4 +1,16 @@
-p This is the partial for view 2.
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+	
+div(id="all")
+	h1 Aditi and Scott's Engagement
+
+	h2 Song Queue
+
+	nav
+		ul
+			li(ng-repeat="song in songs")
+				b Song
+				p {{song.song}}
+				b Artist
+				p {{song.artist}}
+				button(ng-click='deletePost(song)') Delete Song
+				br
+

@@ -1,2 +1,28 @@
-p This is the partial for view 1.
-p The current time is {{time}}
+	
+div(id="all")
+	h1 Aditi and Scott's Engagement
+
+	h2 Request a Song
+	label(for='song') Song:
+	br 
+	input(ng-model='song.song', name='song')
+	br
+	br
+	label(for='artist') Artist: 
+	br
+	input(ng-model='song.artist', name='artist')
+
+	p
+		button(ng-click='submitPost(song)') Submit Post
+
+	h2 Song Queue
+
+	nav
+		ul
+			li(ng-repeat="song in songs")
+				b Song
+				p {{song.song}}
+				b Artist
+				p {{song.artist}}
+				br
+

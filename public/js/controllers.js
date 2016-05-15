@@ -4,15 +4,27 @@
 
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, socket) {
-    socket.on('send:name', function (data) {
-      $scope.name = data.name;
-    });
-  }).
-  controller('MyCtrl1', function ($scope, socket) {
     socket.on('send:time', function (data) {
-      $scope.time = data.time;
+      $scope.songs = data.songs;
     });
   }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
+
+  controller('MyCtrl1', function ($scope, socket) {
+    $scope.song = {};
+
+    $scope.submitPost=function(song){
+      socket.emit('send:song', song);
+      $scope.clearForm();
+    }
+
+
+    $scope.clearForm=function(){
+      $scope.song={};
+    }
+  }).
+  
+  controller('MyCtrl2', function ($scope, socket) {
+    $scope.deletePost=function(song){
+      socket.emit('delete:song', song);
+    }
   });
