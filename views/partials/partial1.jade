@@ -1,28 +1,28 @@
 	
 div(id="all")
-	h1 Aditi and Scott's Engagement
+	h1 Real Time Chat
 
-	h2 Request a Song
-	label(for='song') Song:
-	br 
-	input(ng-model='song.song', name='song')
-	br
-	br
-	label(for='artist') Artist: 
+	h2 Type Your Message
+	label(for='artist') Name: 
 	br
 	input(ng-model='song.artist', name='artist')
 	br
 	br
-	button(ng-click='submitPost(song)') Submit Post
+	label(for='song') Message:
+	br 
+	input(ng-model='song.song', name='song')
+	br
+	br
+	button(ng-click='submitPost(song)') Submit Msg
 
-	h2 Song Queue
+	h2 Chat
 
 	nav
 		ul(id="list")
 			li(ng-repeat="song in songs")
-				b Song
+				b {{song.artist}}
+				p(class="date") {{song.date}} 
 				p {{song.song}}
-				b Artist
-				p {{song.artist}}
 				br
+				p(class="watch" ng-show="watch") {{watch}}
 

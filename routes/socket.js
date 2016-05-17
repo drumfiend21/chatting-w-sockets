@@ -17,6 +17,11 @@ module.exports = function (socket) {
     songs = _.reject(songs, ['id', data.id]);
   });
 
+  socket.on('send:watch', function(data){
+    data.watch = data.watch.toString();
+    socket.emit('broadcast:watch', data)
+  });
+
   setInterval(function () {
     socket.emit('send:time', {
       songs: songs

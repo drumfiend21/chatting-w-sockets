@@ -75,3 +75,12 @@ nav ul{
 button {
   color:black;
 }
+
+.watch{
+  font-style: italic;
+  font-size: 0.25em;
+}
+
+.date{
+  font-size: 0.25em;
+}
