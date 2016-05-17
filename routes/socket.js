@@ -5,7 +5,7 @@
 var shortid = require('shortid');
 var _ = require('lodash');
 
-var songs = [{song: 'Let the Groove in',artist:'Justin Timberlake'}];
+var songs = [];
 
 module.exports = function (socket) {
   socket.on('send:song', function(data){
@@ -18,8 +18,8 @@ module.exports = function (socket) {
   });
 
   socket.on('send:watch', function(data){
-    data.watch = data.watch.toString();
-    socket.emit('broadcast:watch', data)
+    // if(data.watch) data.watch = data.watch.toString();
+    socket.broadcast.emit('broadcast:watch', data)
   });
 
   setInterval(function () {

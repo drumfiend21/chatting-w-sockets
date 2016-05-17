@@ -1,28 +1,28 @@
 	
 div(id="all")
-	h1 Real Time Chat
-
-	h2 Type Your Message
+	h3 Real Time Chat
 	label(for='artist') Name: 
 	br
 	input(ng-model='song.artist', name='artist')
+	span(ng-show='artistError', id='artistError') Please enter your name.
 	br
 	br
 	label(for='song') Message:
 	br 
-	input(ng-model='song.song', name='song')
+	input(ng-model='song.song', name='song', ng-keypress='enter($event)')
+	span(ng-show='songError', id='songError') Please enter a message.
 	br
 	br
 	button(ng-click='submitPost(song)') Submit Msg
 
-	h2 Chat
+	h3 Chat
 
 	nav
-		ul(id="list")
+		ul(id="list", ng-mouseover='hoverIn()', ng-mouseleave='hoverOut()')
 			li(ng-repeat="song in songs")
 				b {{song.artist}}
-				p(class="date") {{song.date}} 
+				p(id='date') {{song.date}} 
 				p {{song.song}}
 				br
-				p(class="watch" ng-show="watch") {{watch}}
+		i(id='watch') {{watch}}
 

@@ -57,6 +57,7 @@ img {
 li {
   list-style: none;
   font-size: 0.85em;
+  margin-left: -15%;
 }
 
 nav ul{
@@ -76,11 +77,19 @@ button {
   color:black;
 }
 
-.watch{
+#watch{
   font-style: italic;
-  font-size: 0.25em;
+  font-size: 0.75em;
 }
 
-.date{
-  font-size: 0.25em;
+#date{
+  font-size: 0.65em;
 }
+
+#songError, #artistError{
+  color:red;
+  font-size: 0.85em;
+  display: block;
+}
+
+
