@@ -12,6 +12,10 @@ body{
   color: white;
 }
 
+input{
+  color:black;
+}
+
 img {
   left: 0px;
   top:0px;
@@ -66,4 +70,8 @@ nav ul{
 nav ul{
   /*overflow:hidden; */
   overflow-y:scroll;
+}
+
+button {
+  color:black;
 }

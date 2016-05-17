@@ -11,14 +11,14 @@ div(id="all")
 	label(for='artist') Artist: 
 	br
 	input(ng-model='song.artist', name='artist')
-
-	p
-		button(ng-click='submitPost(song)') Submit Post
+	br
+	br
+	button(ng-click='submitPost(song)') Submit Post
 
 	h2 Song Queue
 
 	nav
-		ul
+		ul(id="list")
 			li(ng-repeat="song in songs")
 				b Song
 				p {{song.song}}
